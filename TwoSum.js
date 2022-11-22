@@ -5,18 +5,18 @@ return [0, 1]. */
 const checkSum = () => {
   const r1 = require("readline-sync");
   let nums = [];
-  let sum;
-  let i = r1.question("Enter the size of array ");
+  let i = Number(r1.question("Enter the size of array "));
   for (let index = 0; index < i; index++) {
-    nums.push(r1.prompt());
+    nums.push(Number(r1.prompt()));
     console.log(nums);
   }
-  let target = r1.question("Enter the target value ");
+  let target = Number(r1.question("Enter the target value "));
   let NumIndex = [2];
   for (let index = 0; index + 1 < nums.length; index++) {
-    sum = nums[index] + nums[index + 1];
+    let sum = nums[index] + nums[index + 1];
     NumIndex[0] = index;
     NumIndex[1] = index + 1;
+    console.log("Sum", sum);
     if (sum == target) {
       console.log("Num Index", NumIndex);
       return NumIndex;
